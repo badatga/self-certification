@@ -5,6 +5,7 @@ import { CertificationModule } from './certification/certification.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Certification } from './certification/entities/certification.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { Certification } from './certification/entities/certification.entity';
       synchronize: true,
     }),
     CertificationModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
