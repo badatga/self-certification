@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CertificationModule } from './certification/certification.module';
+import { VerificationModule } from './verification/verification.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Certification } from './certification/entities/certification.entity';
+import { Verification } from './verification/entities/verification.entity';
 import { AuthModule } from './auth/auth.module';
+import { AccountModule } from './account/account.module';
 
 @Module({
   imports: [
@@ -19,11 +20,12 @@ import { AuthModule } from './auth/auth.module';
       username: 'soosoo',
       password: '',
       database: 'soosoo',
-      entities: [Certification],
+      entities: [Verification],
       synchronize: true,
     }),
-    CertificationModule,
+    VerificationModule,
     AuthModule,
+    AccountModule,
   ],
   controllers: [AppController],
   providers: [AppService],
