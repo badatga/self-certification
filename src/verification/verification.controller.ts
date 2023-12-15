@@ -3,8 +3,9 @@ import {
   Post,
   Body,
   HttpException,
-  HttpStatus, Get
-} from "@nestjs/common";
+  HttpStatus,
+  Get,
+} from '@nestjs/common';
 import { VerificationService } from './verification.service';
 import { CreateVerificationDto } from './dto/create-verification.dto';
 
